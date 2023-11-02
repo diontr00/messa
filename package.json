@@ -1,0 +1,28 @@
+{
+  "name": "@khanhanhtr/message-bus",
+  "type": "module",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "lint": "tsc",
+    "dev": "bun src/index.ts",
+    "test": "vitest run",
+    "test-w": "vitest",
+    "ci": "bun run lint && bun run test && bun run build",
+    "release": "bun run ci && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "bun-types": "latest",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.6"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
